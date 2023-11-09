@@ -44,22 +44,23 @@ export class RegistroComponent {
         }
 
         let usuarios = JSON.parse(us);
+
+        if(nuevoRegistro != null){
         console.log(usuarios);
         
+        usuarios.push(nuevoRegistro);
 
-      }
+        localStorage.setItem("personas", JSON.stringify(usuarios))
+
+        const usu = localStorage.getItem("personas");
+
     }
 
     
 
-    let persona = {
-      nombre : "andrea",
-      apellido : "Peña"
-    }
-
-    localStorage.setItem("persona", JSON.stringify(persona));
-
+    
    
   }
 }
 
+}}

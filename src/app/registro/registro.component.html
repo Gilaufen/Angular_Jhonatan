@@ -16,7 +16,7 @@
         <div *ngIf="ingresar.get('contraseña')?.hasError('required')">
             El campo es obligatorio.
         </div>
-        <button type="submit" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Ingresar</button>
+        <button (click)="registrarUsuario()" type="submit" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Ingresar</button>
         <div class="register-box flex">
             <p>Ya tiene una cuenta?<a href="/">Ingrese</a></p>
         </div>
