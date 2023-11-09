@@ -1,0 +1,22 @@
+angular: framework en efecto de js
+tambien trabaja web components, se usa typeScript para programar, el proyecto ya viene estructurado.
+
+Cada carpeta es un componente. No se refresca la pantalla solo se inyectan los componentes a la página principal.
+
+para crear un nuevo proyecto usamos ng New, para comprobar si tenemos angular solo escribimos ng
+ 
+instalación de angular: npm install -g @angular/cli@latest
+
+para ejecutarlo en el servidor hay que escribir ng serve 
+
+------Proyecto-----
+
+las carpetas de app y assets no se mueven xd
+si quitamos el app route del index cagaste
+
+podemos borrar todo lo del app.component.html menos la etiqueta del final <router-outlet></router-outlet>
+
+para crear un componente se usa ( ng g component nombreComponente )
+
+las ruats están en el archivo, app-routingg.module.ts {path: '', component: LoginComponent} el path es para la url y el component es el componente a renderizar
+
