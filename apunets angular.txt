@@ -20,3 +20,6 @@ para crear un componente se usa ( ng g component nombreComponente )
 
 las ruats están en el archivo, app-routingg.module.ts {path: '', component: LoginComponent} el path es para la url y el component es el componente a renderizar
 
+validas campos vacios y caracteres especiales, almacenas la pass en el storage, recuperar contraseña. Con funcionalidad = callCenter{
+    perfil de asesor
+}
