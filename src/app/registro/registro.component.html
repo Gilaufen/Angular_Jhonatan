@@ -3,23 +3,25 @@
     <div class="title">
         <h1 class="text-2xl">Register</h1>
     </div>
-    <form class="form bg-blue-100 px-10 py-5 gap-5 rounded-2xl shadow-md shadow-slate-300" [formGroup]="ingresar">
-        <input type="text" class="bg-transparent border-b-2 border-b-blue-300 " placeholder="Escribe tu nombre" formControlName="nombre">
-        <div *ngIf="ingresar.get('nombre')?.hasError('required')">
+    <form class="form bg-blue-100 px-10 py-5 gap-5 rounded-2xl shadow-md shadow-slate-300" [formGroup]="ingresar" (ngSubmit)="registrarUsuario()">
+        <input type="text" class="bg-transparent border-b-2 border-b-blue-300 " placeholder="Escribe tu nombre de usuario" formControlName="nombre">
+        <div class="bg-red-400 py-2 rounded-md" *ngIf="ingresar.get('nombre')?.hasError('required')">
             El campo es obligatorio.
         </div>
-        <input type="text" class="bg-transparent border-b-2 border-b-blue-300" placeholder="Escribe tu apellido" formControlName="apellido">
-        <div *ngIf="ingresar.get('apellido')?.hasError('required')">
-            El campo es obligatorio.
-        </div>
-        <input type="text" class="bg-transparent border-b-2 border-b-blue-300" placeholder="Escribe tu contraseña" formControlName="contraseña">
-        <div *ngIf="ingresar.get('contraseña')?.hasError('required')">
-            El campo es obligatorio.
-        </div>
-        <button (click)="registrarUsuario()" type="submit" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Ingresar</button>
-        <div class="register-box flex">
-            <p>Ya tiene una cuenta?<a href="/">Ingrese</a></p>
-        </div>
+        <div class="bg-red-400 py-2 rounded-md" *ngIf="ingresar.get('nombre')?.hasError('minlength')">
+            El nombre debe tener al menos 5 caracteres.
+          </div>
         
+        <input type="password" class="bg-transparent border-b-2 border-b-blue-300" placeholder="Escribe tu contraseña" formControlName="contraseña">
+        <div class="bg-red-400 py-2 rounded-md" *ngIf="ingresar.get('contraseña')?.hasError('required')">
+            El campo es obligatorio.
+        </div>
+        <div class="bg-red-400 py-2 rounded-md" *ngIf="ingresar.get('contraseña')?.hasError('pattern')">
+            La contraseña debe tener al menos un carácter especial y tener al menos 6 caracteres.
+          </div>
+        <button type="submit" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Registrarse</button>
+        <div class="register-box flex">
+            <p>Ya tiene una cuenta?</p><strong class="text-red-700"><a href="/">Ingrese</a></strong>
+        </div>
     </form>
 </div>

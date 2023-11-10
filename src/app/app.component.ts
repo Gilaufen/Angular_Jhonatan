@@ -9,7 +9,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   constructor(){
+    this.inicio();
   }
 
+  inicio() {
+    if(localStorage.getItem('personas') === null){
+      let quemao = [
+        { nombre: "andrea", contraseña: "12345" }, 
+        { nombre: "juan", contraseña: "12345" }
+      ];
+  
+      localStorage.setItem("personas", JSON.stringify(quemao));
+    }
+  }
+  
+
+  
   
 }
