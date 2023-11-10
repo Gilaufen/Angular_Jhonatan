@@ -21,15 +21,15 @@ export class RecuperacionComponent {
   recuperarContrasena(){
     const nombreRecogido = this.formulario.get('nombre');
     const nuevaContraseña = this.formulario.get('constraseña');
+    const u = localStorage.getItem('personas');
 
-    const usuarios = localStorage.getItem('personas');
+)
 
-    
-  console.log("usuarios:", usuarios);
+  console.log("usuarios:", u);
   console.log("nombreRecogido:", nombreRecogido);
   console.log("nuevaContraseña:", nuevaContraseña);
 
-    if(usuarios && nombreRecogido && nuevaContraseña){
+    if(u != null && nombreRecogido && nuevaContraseña){
 
       console.log("entro 1");
       
@@ -39,7 +39,7 @@ export class RecuperacionComponent {
 
       
 
-      const usu = JSON.parse(usuarios);
+      const usu = JSON.parse(u);
 
       if(nombre !== '' && contraseña !==''){
 
