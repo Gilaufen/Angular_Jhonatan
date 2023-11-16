@@ -7,11 +7,11 @@
         <div class="bg-red-400 py-2 rounded-md" *ngIf="formulario.get('nombre')?.hasError('required')">
             El campo es obligatorio.
         </div>
-        <input type="password" name="contraseña" class="bg-transparent border-b-2 border-b-blue-300" placeholder="Escribe tu constraseña" formControlName="contraseña"     >
+        <input type="password" name="contraseña" class="bg-transparent border-b-2 border-b-blue-300" placeholder="Escribe tu nueva constraseña" formControlName="contraseña"     >
         <div class="bg-red-400 py-2 rounded-md" *ngIf="formulario.get('contraseña')?.hasError('required')">
             El campo es obligatorio.
         </div>
-        <button type="submit" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Ingresar</button>
+        <button type="submit"  class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white">Ingresar</button>
         <div class="register-box flex ">
             <a class="text-red-900" href="/">Volver</a>
         </div>
