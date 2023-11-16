@@ -9,6 +9,8 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { RecuperacionComponent } from './recuperacion/recuperacion.component';
+import { PokemonsComponent } from './pokemons/pokemons.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { RecuperacionComponent } from './recuperacion/recuperacion.component';
     LoginComponent,
     DashboardComponentComponent,
     RegistroComponent,
-    RecuperacionComponent
+    RecuperacionComponent,
+    PokemonsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
