@@ -11,6 +11,9 @@ import { RegistroComponent } from './registro/registro.component';
 import { RecuperacionComponent } from './recuperacion/recuperacion.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FotoPokemoComponent } from './components/foto-pokemo/foto-pokemo.component';
+import { TarjetaPokemoComponent } from './components/tarjeta-pokemo/tarjeta-pokemo.component';
+import { DetallePokemoComponent } from './components/detalle-pokemo/detalle-pokemo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardComponentComponent,
     RegistroComponent,
     RecuperacionComponent,
-    PokemonsComponent
+    PokemonsComponent,
+    FotoPokemoComponent,
+    TarjetaPokemoComponent,
+    DetallePokemoComponent
   ],
   imports: [
     BrowserModule,

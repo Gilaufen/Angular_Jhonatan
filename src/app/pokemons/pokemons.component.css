@@ -1,21 +1,19 @@
-.poke-list{
-    padding:2.5rem 5rem;
-    display: flex;
-    width: 100vw;
-    flex-wrap: wrap;
-    gap: 5%;
+#container{
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    
 }
 
-.pokemon{
-    width: 20%;
-    margin-top: 1%;
+app-foto-pokemo{
+    margin-left: 10%;
+}
+
+#tarjetasContainer{
     display: flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: start;
     flex-direction: column;
-}
-
-.data{
-width: 100%;
+    gap: 5px;
+    max-height: 100%;
+    overflow-y: scroll;
 }

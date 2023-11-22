@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { PokemonService } from '../services/pokemon.service';
+import { Resultado } from '../interfaces/pokeApi';
+import { Pokemon } from '../interfaces/pokemon';
 
 
 
@@ -8,20 +11,31 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './pokemons.component.html',
   styleUrls: ['./pokemons.component.css']
 })
-export class PokemonsComponent  {
-  constructor(private http:HttpClient){
+export class PokemonsComponent implements OnInit {
+  constructor(private http: HttpClient, private pokemonService: PokemonService) {
 
   }
 
-  async ngOnInit(){
-    let resp = this.http.get("https://pokeapi.co/api/v2/pokemon");
-    resp.subscribe(resp =>{
-      
-      return resp.results
-    })
+  listaPokemon:Resultado[] = []
+  pagina:number=1;
+  pokemonSelect?:Pokemon;
 
-    
-      let poke = this.http.get("https://pokeapi.co/api/v2/pokemon/res")
-    
+  ngOnInit(): void {
+    this.cargarLista();
+
   }
+
+  async cargarLista() {
+    this.listaPokemon = [...this.listaPokemon, ... await this.pokemonService.getByPage(this.pagina)]
+    console.log(this.listaPokemon);
+    this.pagina++;
+  }
+
+  async tarjetaClick(id:string){
+    console.log(id)
+    this.pokemonSelect = await this.pokemonService.getById(id)
+    console.log(this.pokemonSelect)
+  }
+
+
 }

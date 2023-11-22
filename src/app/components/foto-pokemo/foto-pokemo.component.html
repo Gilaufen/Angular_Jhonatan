@@ -1,0 +1,18 @@
+<div id="container">
+    <div id="container-img">
+        <img src="{{pokemon.sprites.front_default}}" alt="pokemon{{pokemon.id}}" *ngIf="pokemon">
+    </div>
+    <div id="information">
+        <span>Nombre: {{pokemon?.name}}</span>
+        <hr>
+        <span>Habilidades: <span class="info-poke" *ngFor="let hab of pokemon?.abilities">{{hab.ability.name}}</span>
+        </span>
+        <hr>
+        <span>Experiencia base: {{pokemon?.base_experience}}</span>
+        <hr>
+        <span>Tipo: <span *ngFor="let tipo of pokemon?.types">{{tipo.type.name}}</span></span>
+        <hr>
+        <span>Altura: {{pokemon?.height}}'</span>
+    </div>
+
+</div>
